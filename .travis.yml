@@ -2,6 +2,9 @@
 os: linux
 dist: xenial # Ubuntu 16.04
 
+# Define language
+language: shell
+
 # Only build pushes targing the master branch
 branches:
   only:
