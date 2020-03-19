@@ -33,7 +33,6 @@ jobs:
     - stage: terraform plan
       # Terraform Plan: As part of a pull request or kicked off by an API
       if: type IN (pull_request, api)
-      language: shell
       install:
         # Download and install terraform before each run
         - wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
@@ -50,7 +49,6 @@ jobs:
     - stage: terraform apply
       # Terraform Apply: When pushing direct to master, or when PR merge into master
       if: type IN (push) and branch = master
-      language: shell
       install:
         # Download and install terraform before each run
         - wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
