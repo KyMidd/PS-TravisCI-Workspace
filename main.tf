@@ -28,12 +28,6 @@ module "bootstrap" {
 }
 
 /*
-locals {
-  cisco_asav_name       = "CiscoASAv"  # Just for fun, name your ASAv anything you'd like!
-  my_public_ip          = "1.2.3.4/32"  # Update this to your public IP when deploying
-  ssh_key_name          = "cisco_asav_keypair"  # Update only if you've created an SSH key with a different name than cisco_asav_keypair
-  asav_public_facing_ip = "172.16.20.10"
-}
 
 resource "aws_vpc" "aws_vpc" {
   cidr_block = "172.16.0.0/16"
@@ -41,6 +35,17 @@ resource "aws_vpc" "aws_vpc" {
   tags = {
     Name = "AwsVpc"
   }
+}
+
+/*
+
+
+/*
+locals {
+  cisco_asav_name       = "CiscoASAv"  # Just for fun, name your ASAv anything you'd like!
+  my_public_ip          = "1.2.3.4/32"  # Update this to your public IP when deploying
+  ssh_key_name          = "cisco_asav_keypair"  # Update only if you've created an SSH key with a different name than cisco_asav_keypair
+  asav_public_facing_ip = "172.16.20.10"
 }
 
 resource "aws_internet_gateway" "internet_gateway" {
