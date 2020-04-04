@@ -64,6 +64,9 @@ jobs:
       if: type IN (push) and branch = master
 
       install:
+        # Install unzip
+        - sudo apt-get -y install unzip
+        
         # Download and install terraform before each run
         - wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
         - unzip terraform_"$tf_version"_linux_amd64.zip
