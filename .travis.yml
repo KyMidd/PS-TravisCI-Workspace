@@ -1,7 +1,7 @@
 # Define environment
 os: linux  # The default OS
 dist: xenial # Ubuntu 16.04
-#arch: arm64 # Architecture signifying a containerized version of Linux to boot faster
+arch: arm64 # Architecture signifying a containerized version of Linux to boot faster
 
 # Define language
 language: shell  # aka, bash on Linux
@@ -37,6 +37,9 @@ jobs:
       if: type IN (pull_request, api)
 
       install:
+        # Install unzip
+        - sudo apt-get -y install unzip
+
         # Download and install terraform before each run
         - wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
         - unzip terraform_"$tf_version"_linux_amd64.zip
