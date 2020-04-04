@@ -27,17 +27,13 @@ module "bootstrap" {
   aws_iam_policy_assume_name  = "IamPolicyAssume"
 }
 
-/*
-
 resource "aws_vpc" "aws_vpc" {
   cidr_block = "172.16.0.0/16"
 
   tags = {
-    Name = "AwsVpcName"
+    Name = "PluralSightVpc"
   }
 }
-
-/*
 
 
 /*
