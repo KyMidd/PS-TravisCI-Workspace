@@ -34,7 +34,6 @@ resource "aws_vpc" "aws_vpc" {
     Name = "PluralSightVpc"
   }
 }
-}
 
 
 /*
