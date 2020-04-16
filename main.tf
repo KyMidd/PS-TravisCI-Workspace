@@ -33,7 +33,7 @@ resource "aws_vpc" "aws_vpc" {
   tags = {
     Name = "PluralSightVpc"
   }
-}}}}}}}}
+}
 
 
 /*
