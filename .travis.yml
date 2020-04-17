@@ -1,5 +1,5 @@
 # Define environment
-os: windows  # The default OS
+os: linux  # The default OS
 dist: xenial # Ubuntu 16.04
 
 # Define language
