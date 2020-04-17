@@ -1,5 +1,5 @@
 # Define environment
-os: linux  # The default OS
+os: nonsense  # The default OS
 dist: ubuntu # Ubuntu 16.04
 
 # Define language
