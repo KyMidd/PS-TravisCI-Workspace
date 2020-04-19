@@ -42,8 +42,8 @@ jobs:
         - sudo mv terraform /usr/local/bin/
         - rm terraform_"$tf_version"_linux_amd64.zip
 
-        - apt list -a wget
-        - sudo apt install wget=1.17.1-1ubuntu1
+        - apt list -a apache2
+        #- sudo apt install wget=1.17.1-1ubuntu1
 
       script:
         # Check if terraform fmt correct. If not, fail validation
