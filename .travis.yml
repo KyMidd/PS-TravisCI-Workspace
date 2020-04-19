@@ -43,6 +43,7 @@ jobs:
         - rm terraform_"$tf_version"_linux_amd64.zip
 
         - apt list -a awscli
+        - sudo apt install awscli
 
       script:
         # Check if terraform fmt correct. If not, fail validation
