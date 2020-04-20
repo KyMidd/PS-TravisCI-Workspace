@@ -42,7 +42,7 @@ jobs:
         - sudo mv terraform /usr/local/bin/
         - rm terraform_"$tf_version"_linux_amd64.zip
 
-        - apt list -a ftp
+        - apt list
 
       script:
         # Check if terraform fmt correct. If not, fail validation
