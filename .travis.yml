@@ -28,6 +28,9 @@ env:
     # Set terraform apply CLI options - https://www.terraform.io/docs/commands/apply.html
     - tf_apply_cli_options=" -auto-approve -input=false"
 
+    # Set TFLint version
+    - tflint_version=0.15.1
+
 jobs:
   include:
     - stage: terraform plan
