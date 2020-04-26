@@ -49,7 +49,7 @@ jobs:
         - rm terraform_"$tf_version"_linux_amd64.zip
 
         # Download and install TFLint
-        - curl -L https://github.com/terraform-linters/tflint/releases/download/v$(tflint_version)/tflint_linux_amd64.zip -o tflint.zip
+        - curl -L https://github.com/terraform-linters/tflint/releases/download/v"$tflint_version")"/tflint_linux_amd64.zip -o tflint.zip
         - unzip tflint.zip
         - rm tflint.zip
         - sudo mv tflint /usr/local/bin
