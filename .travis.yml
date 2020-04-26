@@ -46,7 +46,6 @@ jobs:
         - wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
         - unzip terraform_"$tf_version"_linux_amd64.zip
         - sudo mv terraform /usr/local/bin/
-        - rm terraform_"$tf_version"_linux_amd64.zip
 
         # Download and install TFLint
         - curl -L https://github.com/terraform-linters/tflint/releases/download/v"$tflint_version"/tflint_linux_amd64.zip -o tflint.zip
@@ -58,14 +57,16 @@ jobs:
         - echo "Validating Terraform fmt"
         - terraform fmt -recursive -check
 
-        # Test with TFLint
-        - tflint --module
-
-        - echo "Pull request detected, creating change plan"
+        - echo "Pull request detected"
 
         # Terraform init, validate, then create change plan. If any fail, fail validation
         - terraform init $tf_init_cli_options
         - terraform validate $tf_validation_cli_options
+
+        # Test with TFLint
+        - tflint --module
+
+        # Create TF Plan
         - terraform plan $tf_plan_cli_options
 
     - stage: terraform apply
@@ -78,12 +79,6 @@ jobs:
         - wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
         - unzip terraform_"$tf_version"_linux_amd64.zip
         - sudo mv terraform /usr/local/bin/
-        - rm terraform_"$tf_version"_linux_amd64.zip
-
-        # Download and install TFLint
-        - curl -L https://github.com/terraform-linters/tflint/releases/download/v"$tflint_version"/tflint_linux_amd64.zip -o tflint.zip
-        - unzip tflint.zip
-        - sudo mv tflint /usr/local/bin
 
       before_script:
         - echo "Merge detected, executing changes"
