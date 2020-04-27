@@ -35,8 +35,6 @@ resource "aws_vpc" "aws_vpc" {
   }
 }
 
-
-/*
 locals {
   cisco_asav_name       = "CiscoASAv"  # Just for fun, name your ASAv anything you'd like!
   my_public_ip          = "1.2.3.4/32"  # Update this to your public IP when deploying
@@ -220,4 +218,3 @@ resource "aws_instance" "cisco_asav" {
 output "asav_public_ip" {
   value = aws_eip.cisco_asav_elastic_public_ip.public_ip
 }
-*/
