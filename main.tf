@@ -16,6 +16,7 @@ provider "aws" {
   version = "~> 2.36.0"
 }
 
+/*
 # Terraform bootstrapping
 module "bootstrap" {
   source                      = "./modules/bootstrap"
@@ -218,3 +219,4 @@ resource "aws_instance" "cisco_asav" {
 output "asav_public_ip" {
   value = aws_eip.cisco_asav_elastic_public_ip.public_ip
 }
+*/
